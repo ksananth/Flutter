@@ -61,6 +61,31 @@ class _MyHomePageState extends State<MyHomePage> {
     });
   }
 
+  void _bottomSheet() {
+    showModalBottomSheet(
+      context: context,
+      builder: (context) {
+        return Wrap(
+          children: [
+            ListTile(
+              leading: Icon(Icons.share),
+              title: Text('Share'),
+              onLongPress: _incrementCounter ,
+            ),
+            ListTile(
+              leading: Icon(Icons.copy),
+              title: Text('Copy Link'),
+            ),
+            ListTile(
+              leading: Icon(Icons.edit),
+              title: Text('Edit'),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     // This method is rerun every time setState is called, for instance as done
@@ -106,7 +131,7 @@ class _MyHomePageState extends State<MyHomePage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
+        onPressed: _bottomSheet,
         tooltip: 'Increment',
         child: const Icon(Icons.add),
       ), // This trailing comma makes auto-formatting nicer for build methods.
