@@ -15,7 +15,7 @@
 *.ipr
 *.iws
 .idea/
-.dart_tool/*
+.dart_tool/
 **/dart_tool/
 
 # Visual Studio Code related
