@@ -65,15 +65,7 @@ class _MyHomePageState extends State<MyHomePage>
 
     return Scaffold(
       key: scaffoldKey,
-      //endDrawer: drawer(),
-      appBar: AppBar(
-          elevation: 15,
-          shadowColor: Colors.orangeAccent,
-          title: const SizedBox(
-            width: 40,
-            child: Icon(Icons.sailing),
-          ),
-          centerTitle: false),
+      endDrawer: drawer(),
       body: Padding(
         padding: EdgeInsets.only(top: topPadding, bottom: bottomPadding),
         child:
@@ -85,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage>
   Widget mobileView() {
     return Padding(
       padding: EdgeInsets.only(left: sidePadding, right: sidePadding),
-      child: SizedBox(
+      child: Container(
         width: screenWidth,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -134,6 +126,34 @@ class _MyHomePageState extends State<MyHomePage>
           ),
         ),
       ],
+    );
+  }
+
+
+  Widget drawer() {
+    return Container(
+      width: screenWidth * 0.5,
+      child: Drawer(
+        child: ListView(
+          children: [Container(height: screenHeight * 0.1)] +
+              contentViews
+                  .map((e) => Container(
+                child: ListTile(
+                  title: Text(
+                    e.tab.title,
+                    style: Theme.of(context).textTheme.button,
+                  ),
+                  onTap: () {
+                    itemScrollController.scrollTo(
+                        index: contentViews.indexOf(e),
+                        duration: Duration(milliseconds: 300));
+                    Navigator.pop(context);
+                  },
+                ),
+              ))
+                  .toList(),
+        ),
+      ),
     );
   }
 }
