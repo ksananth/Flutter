@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:my_app/utils/view_wrapper.dart';
 
 class AboutView extends StatefulWidget {
-  const AboutView({required Key key}) : super(key: key);
 
   @override
   _AboutViewState createState() => _AboutViewState();

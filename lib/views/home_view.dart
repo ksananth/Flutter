@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:my_app/utils/view_wrapper.dart';
 
 class HomeView extends StatefulWidget {
-  const HomeView({required Key key}) : super(key: key);
 
   @override
   _HomeViewState createState() => _HomeViewState();

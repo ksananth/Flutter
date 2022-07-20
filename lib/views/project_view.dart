@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:my_app/utils/view_wrapper.dart';
 
 class ProjectView extends StatefulWidget {
-  const ProjectView({required Key key}) : super(key: key);
 
   @override
   _ProjectViewState createState() => _ProjectViewState();
