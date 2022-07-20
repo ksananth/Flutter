@@ -3,6 +3,7 @@ import 'package:my_app/utils/content_view.dart';
 import 'package:my_app/utils/view_wrapper.dart';
 import 'package:my_app/views/home_view.dart';
 import 'package:my_app/widgets/Custom_tab_bar.dart';
+import 'package:my_app/widgets/custom_button.dart';
 import 'package:my_app/widgets/custom_tab.dart';
 import 'package:my_app/views/about_view.dart';
 import 'package:my_app/views/project_view.dart';
@@ -103,13 +104,23 @@ class _MyHomePageState extends State<MyHomePage>
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       crossAxisAlignment: CrossAxisAlignment.end,
-      children:  [
+      children: [
         SizedBox(
-          height: screenHeight * 0.05,
-          child: CustomTabBar(
-              controller: tabController,
-              tabs: contentViews.map((e) => e.tab).toList()),
-        ),
+            height: screenHeight * 0.05,
+            child: Row(children: [
+              IconButton(
+                  padding: const EdgeInsets.only(left: 20),
+                  alignment: Alignment.centerLeft,
+                  iconSize: 25,
+                  icon: const Icon(Icons.android_rounded),
+                  color: Colors.black12,
+                  splashColor: Colors.transparent,
+                  onPressed: () => {}),
+              CustomTabBar(
+                  controller: tabController,
+                  tabs: contentViews.map((e) => e.tab).toList()),
+              const CustomButton(title: "Resume")
+            ])),
         SizedBox(
           height: screenHeight * 0.8,
           child: TabControllerHandler(
@@ -125,28 +136,27 @@ class _MyHomePageState extends State<MyHomePage>
     );
   }
 
-
   Widget drawer() {
-    return Container(
+    return SizedBox(
       width: screenWidth * 0.5,
       child: Drawer(
         child: ListView(
           children: [Container(height: screenHeight * 0.1)] +
               contentViews
                   .map((e) => Container(
-                child: ListTile(
-                  title: Text(
-                    e.tab.title,
-                    style: Theme.of(context).textTheme.button,
-                  ),
-                  onTap: () {
-                    itemScrollController.scrollTo(
-                        index: contentViews.indexOf(e),
-                        duration: Duration(milliseconds: 300));
-                    Navigator.pop(context);
-                  },
-                ),
-              ))
+                        child: ListTile(
+                          title: Text(
+                            e.tab.title,
+                            style: Theme.of(context).textTheme.button,
+                          ),
+                          onTap: () {
+                            itemScrollController.scrollTo(
+                                index: contentViews.indexOf(e),
+                                duration: const Duration(milliseconds: 300));
+                            Navigator.pop(context);
+                          },
+                        ),
+                      ))
                   .toList(),
         ),
       ),
