@@ -66,18 +66,14 @@ class _MyHomePageState extends State<MyHomePage>
     return Scaffold(
       key: scaffoldKey,
       endDrawer: drawer(),
-      body: Padding(
-        padding: EdgeInsets.only(top: topPadding, bottom: bottomPadding),
-        child:
-            ViewWrapper(desktopView: desktopView(), mobileView: mobileView()),
-      ),
+      body: ViewWrapper(desktopView: desktopView(), mobileView: mobileView()),
     );
   }
 
   Widget mobileView() {
     return Padding(
       padding: EdgeInsets.only(left: sidePadding, right: sidePadding),
-      child: Container(
+      child: SizedBox(
         width: screenWidth,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.end,
@@ -86,7 +82,7 @@ class _MyHomePageState extends State<MyHomePage>
             IconButton(
                 iconSize: screenWidth * 0.08,
                 icon: const Icon(Icons.menu_rounded),
-                color: Colors.white,
+                color: Colors.black12,
                 splashColor: Colors.transparent,
                 onPressed: () => scaffoldKey.currentState?.openEndDrawer()),
             Expanded(
