@@ -16,18 +16,18 @@ class CustomTabBar extends StatelessWidget {
         ? 0.3
         : 0.4;
     return Padding(
-      padding: EdgeInsets.only(right: screenWidth * 0.05),
+      padding: EdgeInsets.only(right: screenWidth * 0.05, left: 30),
       child: SizedBox(
         width: screenWidth * tabBarScaling,
         child: Theme(
           data: ThemeData(
               highlightColor: Colors.transparent,
               splashColor: Colors.transparent,
-              hoverColor: Colors.transparent),
+              hoverColor: Colors.black12),
           child: TabBar(
             indicatorSize: TabBarIndicatorSize.tab,
             controller: controller,
-            indicatorColor: const Color(0xff21a179),
+            indicatorColor: Colors.blue,
             tabs: tabs,
           ),
         ),

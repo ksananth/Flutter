@@ -107,7 +107,10 @@ class _MyHomePageState extends State<MyHomePage>
       children: [
         SizedBox(
             height: screenHeight * 0.05,
-            child: Row(children: [
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
               IconButton(
                   padding: const EdgeInsets.only(left: 20),
                   alignment: Alignment.centerLeft,
