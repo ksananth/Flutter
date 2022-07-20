@@ -10,38 +10,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
-  void _bottomSheet() {
-    showModalBottomSheet(
-      context: context,
-      builder: (context) {
-        return Wrap(
-          children: [
-            ListTile(
-              leading: Icon(Icons.share),
-              title: Text('Share'),
-              onLongPress: _incrementCounter,
-            ),
-            ListTile(
-              leading: Icon(Icons.copy),
-              title: Text('Copy Link'),
-            ),
-            ListTile(
-              leading: Icon(Icons.edit),
-              title: Text('Edit'),
-            ),
-          ],
-        );
-      },
-    );
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -61,21 +29,12 @@ class _MyHomePageState extends State<MyHomePage> {
         // in the middle of the parent.
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            const Text(
-              'You have pushed the button this many times:',
-            ),
+          children: const <Widget>[
             Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
+              'Home Screen',
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _bottomSheet,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
       ),
     );
   }
