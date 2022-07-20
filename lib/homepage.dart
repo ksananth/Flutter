@@ -119,7 +119,7 @@ class _MyHomePageState extends State<MyHomePage>
               CustomTabBar(
                   controller: tabController,
                   tabs: contentViews.map((e) => e.tab).toList()),
-              const CustomButton(title: "Resume")
+              const CustomButton(title: "Resume", alignment: Alignment.centerRight)
             ])),
         SizedBox(
           height: screenHeight * 0.8,

@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
 class CustomButton extends StatelessWidget {
-  const CustomButton({required this.title});
+  const CustomButton({required this.title, required this.alignment});
 
   final String title;
+  final Alignment alignment;
 
   @override
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {},
       style: ElevatedButton.styleFrom(
+        alignment: alignment,
         onPrimary: Colors.black,
         animationDuration: const Duration(milliseconds: 700),
         primary: Colors.transparent,
