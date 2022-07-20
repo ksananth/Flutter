@@ -6,7 +6,7 @@ import 'package:my_app/widgets/Custom_tab_bar.dart';
 import 'package:my_app/widgets/custom_tab.dart';
 import 'package:my_app/views/about_view.dart';
 import 'package:my_app/views/project_view.dart';
-
+import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'utils/tab_controller_handler.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -21,6 +21,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage>
     with SingleTickerProviderStateMixin {
   late TabController tabController;
+  late ItemScrollController itemScrollController;
   var scaffoldKey = GlobalKey<ScaffoldState>();
 
   late double screenHeight;
@@ -48,6 +49,7 @@ class _MyHomePageState extends State<MyHomePage>
   void initState() {
     super.initState();
     tabController = TabController(length: contentViews.length, vsync: this);
+    itemScrollController = ItemScrollController();
   }
 
   @override
@@ -81,13 +83,31 @@ class _MyHomePageState extends State<MyHomePage>
   }
 
   Widget mobileView() {
-    return Column(
-      children: [
-        Container(
-          color: Colors.blueGrey,
-          child: const Text("mobileView"),
-        )
-      ],
+    return Padding(
+      padding: EdgeInsets.only(left: sidePadding, right: sidePadding),
+      child: SizedBox(
+        width: screenWidth,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          mainAxisAlignment: MainAxisAlignment.start,
+          children: [
+            IconButton(
+                iconSize: screenWidth * 0.08,
+                icon: const Icon(Icons.menu_rounded),
+                color: Colors.white,
+                splashColor: Colors.transparent,
+                onPressed: () => scaffoldKey.currentState?.openEndDrawer()),
+            Expanded(
+              child: ScrollablePositionedList.builder(
+                scrollDirection: Axis.vertical,
+                itemScrollController: itemScrollController,
+                itemCount: contentViews.length,
+                itemBuilder: (context, index) => contentViews[index].content,
+              ),
+            )
+          ],
+        ),
+      ),
     );
   }
 
