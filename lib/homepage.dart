@@ -115,7 +115,7 @@ class _MyHomePageState extends State<MyHomePage>
                   padding: const EdgeInsets.only(left: 20),
                   alignment: Alignment.centerLeft,
                   iconSize: 25,
-                  icon: const Icon(Icons.android_rounded),
+                  icon: Image.asset('assets/logo.png'),
                   color: Colors.black12,
                   splashColor: Colors.transparent,
                   onPressed: () => {}),
