@@ -1,13 +1,14 @@
 import 'dart:ui';
 
 import 'package:flutter/material.dart';
+import 'package:hexcolor/hexcolor.dart';
 
 class Styles {
 
   static ThemeData themeData(bool isDarkTheme, BuildContext context) {
     return ThemeData(
       primarySwatch: Colors.red,
-      primaryColor: isDarkTheme ? Colors.black : Colors.white,
+      primaryColor: isDarkTheme ? HexColor('#8df1b3') : Colors.white,
 
       backgroundColor: isDarkTheme ? Colors.black : const Color(0xffF1F5FB),
 
