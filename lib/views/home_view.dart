@@ -27,7 +27,7 @@ class _HomeViewState extends State<HomeView>
     double imageSize = screenWidth * 0.4;
     double contentSize = screenWidth * 0.4;
     return Container(
-        color: Colors.white,
+        color: Theme.of(context).backgroundColor,
         child: Center(
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -40,19 +40,19 @@ class _HomeViewState extends State<HomeView>
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
+                    children:  [
                       Text.rich(
                         TextSpan(
                           children: [
                             TextSpan(
                                 text: 'Hi, I\'m Ananth, a',
                                 style: TextStyle(
-                                    fontSize: 44, color: Colors.black)),
+                                    fontSize: 44, color: Theme.of(context).primaryColor)),
                             TextSpan(
                               text: ' Front End developer',
                               style: TextStyle(
                                   fontSize: 44,
-                                  color: Colors.black,
+                                  color: Theme.of(context).primaryColor,
                                   fontWeight: FontWeight.bold),
                             ),
                           ],
@@ -62,7 +62,7 @@ class _HomeViewState extends State<HomeView>
                       Text(
                           "With industry experience in building Android and web applications. Specialize in Android & Kotlin",
                           style:
-                              TextStyle(fontSize: 22, color: Colors.black38)),
+                              TextStyle(fontSize: 22, color: Theme.of(context).primaryColor)),
                       SizedBox(height: 20),
                       CustomButton(
                           title: "Let's Talk", alignment: Alignment.centerRight)

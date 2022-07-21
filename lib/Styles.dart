@@ -8,7 +8,7 @@ class Styles {
   static ThemeData themeData(bool isDarkTheme, BuildContext context) {
     return ThemeData(
       primarySwatch: Colors.red,
-      primaryColor: isDarkTheme ? HexColor('#8df1b3') : Colors.white,
+      primaryColor: isDarkTheme ? HexColor('#8df1b3') : Colors.black,
 
       backgroundColor: isDarkTheme ? Colors.black : const Color(0xffF1F5FB),
 
