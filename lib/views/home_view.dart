@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:my_app/utils/view_wrapper.dart';
+import '../widgets/custom_button.dart';
 
 class HomeView extends StatefulWidget {
   @override
@@ -23,15 +24,70 @@ class _HomeViewState extends State<HomeView>
   }
 
   Widget desktopView() {
-    return Container(
-      color: Colors.white,
-      child: Center(
-        child: Container(
-          padding: const EdgeInsets.all(16),
-          child: Lottie.asset('assets/man.json'),
-        ),
+    double imageSize = screenWidth * 0.4;
+    double contentSize = screenWidth * 0.4;
+    const text = Text.rich(
+      TextSpan(
+        // with no TextStyle it will have default text style
+        text: 'Hello',
+        children: <TextSpan>[
+          TextSpan(
+              text: 'World', style: TextStyle(fontWeight: FontWeight.bold)),
+        ],
       ),
     );
+    return Container(
+        color: Colors.white,
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(width: 30),
+              Container(
+                  alignment: Alignment.center,
+                  width: contentSize,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: const [
+                      Text.rich(
+                        TextSpan(
+                          children: [
+                            TextSpan(
+                                text: 'Hi, I\'m Ananth, a',
+                                style: TextStyle(
+                                    fontSize: 44, color: Colors.black)),
+                            TextSpan(
+                              text: ' Front End developer',
+                              style: TextStyle(
+                                  fontSize: 44,
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold),
+                            ),
+                          ],
+                        ),
+                      ),
+                      SizedBox(height: 20),
+                      Text(
+                          "With industry experience in building Android and web applications. Specialize in Android & Kotlin",
+                          style:
+                              TextStyle(fontSize: 22, color: Colors.black38)),
+                      SizedBox(height: 20),
+                      CustomButton(
+                          title: "Let's Talk", alignment: Alignment.centerRight)
+                    ],
+                  )),
+              const SizedBox(width: 10),
+              Container(
+                padding: const EdgeInsets.all(16),
+                child: Container(
+                    width: imageSize, child: Lottie.asset('assets/man.json')),
+              ),
+              const SizedBox(width: 20),
+            ],
+          ),
+        ));
   }
 
   Widget mobileView() {
