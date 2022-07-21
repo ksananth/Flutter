@@ -26,16 +26,6 @@ class _HomeViewState extends State<HomeView>
   Widget desktopView() {
     double imageSize = screenWidth * 0.4;
     double contentSize = screenWidth * 0.4;
-    const text = Text.rich(
-      TextSpan(
-        // with no TextStyle it will have default text style
-        text: 'Hello',
-        children: <TextSpan>[
-          TextSpan(
-              text: 'World', style: TextStyle(fontWeight: FontWeight.bold)),
-        ],
-      ),
-    );
     return Container(
         color: Colors.white,
         child: Center(
