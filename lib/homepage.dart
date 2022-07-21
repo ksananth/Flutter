@@ -1,3 +1,4 @@
+import 'package:circular_reveal_animation/circular_reveal_animation.dart';
 import 'package:flutter/material.dart';
 import 'package:my_app/repository/dark_theme_repository.dart';
 import 'package:my_app/utils/content_view.dart';
@@ -23,8 +24,11 @@ class MyHomePage extends StatefulWidget {
   State<MyHomePage> createState() => _MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage>
-    with SingleTickerProviderStateMixin {
+class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
+  bool cirAn = false;
+  late AnimationController animationController;
+  late Animation<double> animation;
+
   late TabController tabController;
   late ItemScrollController itemScrollController;
   var scaffoldKey = GlobalKey<ScaffoldState>();
@@ -56,6 +60,16 @@ class _MyHomePageState extends State<MyHomePage>
     super.initState();
     tabController = TabController(length: contentViews.length, vsync: this);
     itemScrollController = ItemScrollController();
+
+    animationController = AnimationController(
+      vsync: this,
+      duration: const Duration(milliseconds: 200),
+    );
+    animation = CurvedAnimation(
+      parent: animationController,
+      curve: Curves.easeIn, reverseCurve: Curves.easeInOut
+    );
+    animationController.forward();
   }
 
   @override
@@ -70,6 +84,19 @@ class _MyHomePageState extends State<MyHomePage>
     print('Width: $screenWidth');
     print('Height: $screenHeight');
 
+    var size = MediaQuery.of(context).size;
+    return cirAn
+        ? CircularRevealAnimation(
+            centerOffset: Offset(size.height / 15, size.width / 3.5),
+            animation: animation,
+            child: homeBody(
+              themeProvider,
+            ),
+          )
+        : homeBody(themeProvider);
+  }
+
+  Widget homeBody(DarkThemeProvider themeProvider) {
     return Scaffold(
       backgroundColor: Theme.of(context).backgroundColor,
       key: scaffoldKey,
@@ -131,7 +158,23 @@ class _MyHomePageState extends State<MyHomePage>
                       tabs: contentViews.map((e) => e.tab).toList()),
                   const CustomButton(
                       title: "Resume", alignment: Alignment.centerRight),
-                  DarkModeIcon(themeChangeProvider: themeProvider)
+                  DarkModeIcon(
+                      themeChangeProvider: themeProvider,
+                      callback: () {
+                        setState(() {
+                          cirAn = true;
+                        });
+                        themeProvider.darkTheme = !themeProvider.darkTheme;
+                        if (animationController.status ==
+                                AnimationStatus.forward ||
+                            animationController.status ==
+                                AnimationStatus.completed) {
+                          animationController.reset();
+                          animationController.forward();
+                        } else {
+                          animationController.forward();
+                        }
+                      })
                 ])),
         SizedBox(
             height: screenHeight * 0.8,

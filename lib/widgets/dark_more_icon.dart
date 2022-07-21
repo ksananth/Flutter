@@ -2,10 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../repository/dark_theme_repository.dart';
 
+typedef DarkModeCallback = void Function();
+
 class DarkModeIcon extends StatelessWidget {
   final DarkThemeProvider themeChangeProvider;
+  final DarkModeCallback callback;
 
-  const DarkModeIcon({required this.themeChangeProvider});
+  const DarkModeIcon(
+      {required this.themeChangeProvider, required this.callback});
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +23,7 @@ class DarkModeIcon extends StatelessWidget {
       width: size.width / 2,
       child: GestureDetector(
           onTap: () {
-            if (themeChangeProvider.darkTheme) {
-              themeChangeProvider.darkTheme = false;
-            } else {
-              themeChangeProvider.darkTheme = true;
-            }
+            callback.call();
           },
           child: themeChangeProvider.darkTheme
               ? const Icon(
