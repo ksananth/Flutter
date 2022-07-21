@@ -25,7 +25,7 @@ class _HomeViewState extends State<HomeView>
 
   Widget desktopView() {
     double imageSize = screenWidth * 0.4;
-    double contentSize = screenWidth * 0.4;
+    double contentSize = screenWidth * 0.2;
     return Container(
         color: Theme.of(context).backgroundColor,
         child: Center(
@@ -33,39 +33,60 @@ class _HomeViewState extends State<HomeView>
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(width: 30),
+              const SizedBox(width: 20),
               Container(
                   alignment: Alignment.center,
                   width: contentSize,
                   child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children:  [
+                    children: [
+                      Container(
+                        decoration: BoxDecoration(
+                            borderRadius:
+                                const BorderRadius.all(Radius.circular(5.0)),
+                            color: Theme.of(context).primaryColor),
+                        padding: const EdgeInsets.all(5.0),
+                        child: const Text("Front-End Developer",
+                            style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 10,
+                              color: Colors.black,
+                            )),
+                      ),
+                      const SizedBox(height: 20),
                       Text.rich(
                         TextSpan(
                           children: [
                             TextSpan(
-                                text: 'Hi, I\'m Ananth, a',
+                                text: 'HI THERE 👋, I\'M',
                                 style: TextStyle(
-                                    fontSize: 44, color: Theme.of(context).primaryColor)),
-                            TextSpan(
-                              text: ' Front End developer',
-                              style: TextStyle(
-                                  fontSize: 44,
-                                  color: Theme.of(context).primaryColor,
-                                  fontWeight: FontWeight.bold),
-                            ),
+                                    letterSpacing : 2.0,
+                                    fontSize: 12,
+                                    color: Theme.of(context).secondaryHeaderColor)),
                           ],
                         ),
                       ),
-                      SizedBox(height: 20),
+                      const SizedBox(height: 5),
                       Text(
-                          "With industry experience in building Android and web applications. Specialize in Android & Kotlin",
-                          style:
-                              TextStyle(fontSize: 22, color: Theme.of(context).primaryColor)),
-                      SizedBox(height: 20),
-                      CustomButton(
-                          title: "Let's Talk", alignment: Alignment.centerRight)
+                          "ananth.",
+                          style: TextStyle(
+                              fontSize: 80,
+                              color: Theme.of(context).secondaryHeaderColor)),
+                      const SizedBox(height: 5),
+                      const Text(
+                          "I have industry experience in building Android and web applications. Specialize in Android & Kotlin",
+                          style: TextStyle(fontSize: 12, color: Colors.white24)),
+                      const SizedBox(height: 30),
+                       Text(
+                        'Let\'s Talk!',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Theme.of(context).primaryColor ,
+                          decoration: TextDecoration.underline,
+                          decorationStyle: TextDecorationStyle.wavy,
+                        ),
+                      )
                     ],
                   )),
               const SizedBox(width: 10),
