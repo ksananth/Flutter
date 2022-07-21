@@ -66,6 +66,7 @@ class _MyHomePageState extends State<MyHomePage>
     print('Height: $screenHeight');
 
     return Scaffold(
+      backgroundColor: Colors.pink,
       key: scaffoldKey,
       endDrawer: drawer(),
       body: ViewWrapper(desktopView: desktopView(), mobileView: mobileView()),
