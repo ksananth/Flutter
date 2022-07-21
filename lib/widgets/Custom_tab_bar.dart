@@ -16,7 +16,7 @@ class CustomTabBar extends StatelessWidget {
         ? 0.3
         : 0.4;
     return Padding(
-      padding: EdgeInsets.only(right: screenWidth * 0.05, left: 30),
+      padding: EdgeInsets.only(right: screenWidth * 0.05, left: 20),
       child: SizedBox(
         width: screenWidth * tabBarScaling,
         child: Theme(
@@ -25,9 +25,15 @@ class CustomTabBar extends StatelessWidget {
               splashColor: Colors.transparent,
               hoverColor: Colors.black12),
           child: TabBar(
-            indicatorSize: TabBarIndicatorSize.tab,
+            padding: const EdgeInsets.symmetric(horizontal: 32.0),
             controller: controller,
-            indicatorColor: Colors.blue,
+            labelColor: Theme.of(context).primaryColor,
+            unselectedLabelColor: Theme.of(context).secondaryHeaderColor,
+            indicatorColor: Theme.of(context).primaryColor,
+            indicatorSize: TabBarIndicatorSize.tab,
+            indicatorPadding:  const EdgeInsets.symmetric(horizontal: 5.0),
+            labelStyle: TextStyle(fontSize: 11.0, color: Theme.of(context).secondaryHeaderColor),
+            unselectedLabelStyle: TextStyle(fontSize: 10.0, color: Theme.of(context).primaryColor),
             tabs: tabs,
           ),
         ),

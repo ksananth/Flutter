@@ -10,7 +10,7 @@ class CustomTab extends StatelessWidget{
   @override
   Widget build(BuildContext context) {
      return Tab(
-      child:  Text(title, style:  TextStyle(fontSize: 12, color: Theme.of(context).primaryColor))
+      child:  Text(title)
     );
   }
 }
