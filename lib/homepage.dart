@@ -63,11 +63,12 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
 
     animationController = AnimationController(
       vsync: this,
-      duration: const Duration(milliseconds: 200),
+      duration: const Duration(milliseconds: 1000),
     );
     animation = CurvedAnimation(
       parent: animationController,
-      curve: Curves.easeIn, reverseCurve: Curves.easeInOut
+      curve: Curves.easeIn,
+        //reverseCurve: Curves.easeInOut
     );
     animationController.forward();
   }
