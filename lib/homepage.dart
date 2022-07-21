@@ -106,7 +106,7 @@ class _MyHomePageState extends State<MyHomePage>
       crossAxisAlignment: CrossAxisAlignment.end,
       children: [
         SizedBox(
-            height: screenHeight * 0.05,
+            height: screenHeight * 0.09,
             child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
