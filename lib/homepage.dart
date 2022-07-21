@@ -7,6 +7,7 @@ import 'package:my_app/widgets/custom_button.dart';
 import 'package:my_app/widgets/custom_tab.dart';
 import 'package:my_app/views/about_view.dart';
 import 'package:my_app/views/project_view.dart';
+import 'package:my_app/widgets/social_buttons.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'utils/tab_controller_handler.dart';
 
@@ -126,15 +127,18 @@ class _MyHomePageState extends State<MyHomePage>
             ])),
         SizedBox(
           height: screenHeight * 0.8,
-          child: TabControllerHandler(
-            tabController: tabController,
-            key: null,
-            child: TabBarView(
-              controller: tabController,
-              children: contentViews.map((e) => e.content).toList(),
-            ),
-          ),
-        ),
+          child: Row(children: [
+            Expanded(flex: 1, child: Container(padding: const EdgeInsets.only(left: 15), child: SocialButtons())),
+            Expanded(flex: 9, child: TabControllerHandler(
+              tabController: tabController,
+              key: null,
+              child: TabBarView(
+                controller: tabController,
+                children: contentViews.map((e) => e.content).toList(),
+              ),
+            ))
+          ],
+        )),
       ],
     );
   }
