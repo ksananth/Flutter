@@ -82,6 +82,7 @@ class _HomeViewState extends State<HomeView>
                         'Let\'s Talk!',
                         style: TextStyle(
                           fontSize: 12,
+                          letterSpacing : 1.2,
                           color: Theme.of(context).primaryColor ,
                           decoration: TextDecoration.underline,
                           decorationStyle: TextDecorationStyle.wavy,
