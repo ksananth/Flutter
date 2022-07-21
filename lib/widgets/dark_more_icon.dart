@@ -12,6 +12,7 @@ class DarkModeIcon extends StatelessWidget {
     var size = MediaQuery.of(context).size;
 
     return Container(
+      alignment: Alignment.centerRight,
       margin:
           const EdgeInsets.only(top: 40, bottom: 0.0, left: 25.0, right: 25.0),
       height: size.height / 6,

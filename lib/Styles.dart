@@ -31,6 +31,5 @@ class Styles {
         elevation: 0.0,
       ),
     );
-
   }
 }
