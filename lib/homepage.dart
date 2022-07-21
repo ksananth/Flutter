@@ -68,7 +68,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     animation = CurvedAnimation(
       parent: animationController,
       curve: Curves.easeIn,
-        //reverseCurve: Curves.easeInOut
+      //reverseCurve: Curves.easeInOut
     );
     animationController.forward();
   }
@@ -76,8 +76,14 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
   @override
   Widget build(BuildContext context) {
     themeProvider = Provider.of<DarkThemeProvider>(context);
-    screenWidth = MediaQuery.of(context).size.width;
-    screenHeight = MediaQuery.of(context).size.height;
+    screenWidth = MediaQuery
+        .of(context)
+        .size
+        .width;
+    screenHeight = MediaQuery
+        .of(context)
+        .size
+        .height;
     topPadding = screenHeight * 0.05;
     bottomPadding = screenHeight * 0.03;
     sidePadding = screenWidth * 0.05;
@@ -85,21 +91,25 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
     print('Width: $screenWidth');
     print('Height: $screenHeight');
 
-    var size = MediaQuery.of(context).size;
+    var size = MediaQuery
+        .of(context)
+        .size;
     return cirAn
         ? CircularRevealAnimation(
-            centerOffset: Offset(size.height / 15, size.width / 3.5),
-            animation: animation,
-            child: homeBody(
-              themeProvider,
-            ),
-          )
+      centerOffset: Offset(size.height / 15, size.width / 3.5),
+      animation: animation,
+      child: homeBody(
+        themeProvider,
+      ),
+    )
         : homeBody(themeProvider);
   }
 
   Widget homeBody(DarkThemeProvider themeProvider) {
     return Scaffold(
-      backgroundColor: Theme.of(context).backgroundColor,
+      backgroundColor: Theme
+          .of(context)
+          .backgroundColor,
       key: scaffoldKey,
       endDrawer: drawer(),
       body: ViewWrapper(desktopView: desktopView(), mobileView: mobileView()),
@@ -150,7 +160,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                       padding: const EdgeInsets.only(left: 20),
                       alignment: Alignment.centerLeft,
                       iconSize: 25,
-                      icon: Image.asset('assets/logo.png'),
+                      icon: themeProvider.darkTheme  ? Image.asset('assets/logo_white.png') : Image.asset('assets/logo.png'),
                       color: Colors.black12,
                       splashColor: Colors.transparent,
                       onPressed: () => {}),
@@ -167,7 +177,7 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
                         });
                         themeProvider.darkTheme = !themeProvider.darkTheme;
                         if (animationController.status ==
-                                AnimationStatus.forward ||
+                            AnimationStatus.forward ||
                             animationController.status ==
                                 AnimationStatus.completed) {
                           animationController.reset();
@@ -209,20 +219,24 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         child: ListView(
           children: [Container(height: screenHeight * 0.1)] +
               contentViews
-                  .map((e) => Container(
-                        child: ListTile(
-                          title: Text(
-                            e.tab.title,
-                            style: Theme.of(context).textTheme.button,
-                          ),
-                          onTap: () {
-                            itemScrollController.scrollTo(
-                                index: contentViews.indexOf(e),
-                                duration: const Duration(milliseconds: 300));
-                            Navigator.pop(context);
-                          },
-                        ),
-                      ))
+                  .map((e) =>
+                  Container(
+                    child: ListTile(
+                      title: Text(
+                        e.tab.title,
+                        style: Theme
+                            .of(context)
+                            .textTheme
+                            .button,
+                      ),
+                      onTap: () {
+                        itemScrollController.scrollTo(
+                            index: contentViews.indexOf(e),
+                            duration: const Duration(milliseconds: 300));
+                        Navigator.pop(context);
+                      },
+                    ),
+                  ))
                   .toList(),
         ),
       ),
