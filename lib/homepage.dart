@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:my_app/repository/dark_theme_repository.dart';
 import 'package:my_app/utils/content_view.dart';
 import 'package:my_app/utils/view_wrapper.dart';
 import 'package:my_app/views/home_view.dart';
@@ -7,7 +8,9 @@ import 'package:my_app/widgets/custom_button.dart';
 import 'package:my_app/widgets/custom_tab.dart';
 import 'package:my_app/views/about_view.dart';
 import 'package:my_app/views/project_view.dart';
+import 'package:my_app/widgets/dark_more_icon.dart';
 import 'package:my_app/widgets/social_buttons.dart';
+import 'package:provider/provider.dart';
 import 'package:scrollable_positioned_list/scrollable_positioned_list.dart';
 import 'utils/tab_controller_handler.dart';
 
@@ -31,6 +34,7 @@ class _MyHomePageState extends State<MyHomePage>
   late double topPadding;
   late double bottomPadding;
   late double sidePadding;
+  late DarkThemeProvider themeProvider;
 
   List<ContentView> contentViews = [
     ContentView(
@@ -56,6 +60,7 @@ class _MyHomePageState extends State<MyHomePage>
 
   @override
   Widget build(BuildContext context) {
+    themeProvider = Provider.of<DarkThemeProvider>(context);
     screenWidth = MediaQuery.of(context).size.width;
     screenHeight = MediaQuery.of(context).size.height;
     topPadding = screenHeight * 0.05;
@@ -113,33 +118,42 @@ class _MyHomePageState extends State<MyHomePage>
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-              IconButton(
-                  padding: const EdgeInsets.only(left: 20),
-                  alignment: Alignment.centerLeft,
-                  iconSize: 25,
-                  icon: Image.asset('assets/logo.png'),
-                  color: Colors.black12,
-                  splashColor: Colors.transparent,
-                  onPressed: () => {}),
-              CustomTabBar(
-                  controller: tabController,
-                  tabs: contentViews.map((e) => e.tab).toList()),
-              const CustomButton(title: "Resume", alignment: Alignment.centerRight)
-            ])),
+                  IconButton(
+                      padding: const EdgeInsets.only(left: 20),
+                      alignment: Alignment.centerLeft,
+                      iconSize: 25,
+                      icon: Image.asset('assets/logo.png'),
+                      color: Colors.black12,
+                      splashColor: Colors.transparent,
+                      onPressed: () => {}),
+                  CustomTabBar(
+                      controller: tabController,
+                      tabs: contentViews.map((e) => e.tab).toList()),
+                  const CustomButton(
+                      title: "Resume", alignment: Alignment.centerRight),
+                  DarkModeIcon(themeChangeProvider: themeProvider)
+                ])),
         SizedBox(
-          height: screenHeight * 0.8,
-          child: Row(children: [
-            Expanded(flex: 1, child: Container(padding: const EdgeInsets.only(left: 15), child: SocialButtons())),
-            Expanded(flex: 9, child: TabControllerHandler(
-              tabController: tabController,
-              key: null,
-              child: TabBarView(
-                controller: tabController,
-                children: contentViews.map((e) => e.content).toList(),
-              ),
-            ))
-          ],
-        )),
+            height: screenHeight * 0.8,
+            child: Row(
+              children: [
+                Expanded(
+                    flex: 1,
+                    child: Container(
+                        padding: const EdgeInsets.only(left: 15),
+                        child: SocialButtons())),
+                Expanded(
+                    flex: 9,
+                    child: TabControllerHandler(
+                      tabController: tabController,
+                      key: null,
+                      child: TabBarView(
+                        controller: tabController,
+                        children: contentViews.map((e) => e.content).toList(),
+                      ),
+                    ))
+              ],
+            )),
       ],
     );
   }
