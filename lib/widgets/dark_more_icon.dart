@@ -13,26 +13,21 @@ class DarkModeIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var size = MediaQuery.of(context).size;
-
     return Container(
       alignment: Alignment.centerRight,
-      margin:
-          const EdgeInsets.only(top: 40, bottom: 0.0, left: 25.0, right: 25.0),
-      height: size.height / 6,
-      width: size.width / 2,
+      margin: const EdgeInsets.only( right: 25.0),
       child: GestureDetector(
           onTap: () {
             callback.call();
           },
           child: themeChangeProvider.darkTheme
-              ? const Icon(
+              ? Icon(
                   FontAwesomeIcons.moon,
-                  color: Colors.blue,
+                  color: Theme.of(context).primaryColor,
                 )
-              : const Icon(
+              : Icon(
                   FontAwesomeIcons.sun,
-                  color: Colors.blue,
+                  color: Theme.of(context).primaryColor,
                 )),
     );
   }

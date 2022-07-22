@@ -153,7 +153,6 @@ class _MyHomePageState extends State<MyHomePage> with TickerProviderStateMixin {
         SizedBox(
             height: screenHeight * 0.09,
             child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   IconButton(
