@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:lottie/lottie.dart';
 import 'package:my_app/utils/view_wrapper.dart';
 import '../widgets/custom_button.dart';
+import '../widgets/orbit.dart';
 
 class HomeView extends StatefulWidget {
   @override
@@ -61,29 +62,30 @@ class _HomeViewState extends State<HomeView>
                             TextSpan(
                                 text: 'HI THERE 👋, I\'M',
                                 style: TextStyle(
-                                    letterSpacing : 2.0,
+                                    letterSpacing: 2.0,
                                     fontSize: 12,
-                                    color: Theme.of(context).secondaryHeaderColor)),
+                                    color: Theme.of(context)
+                                        .secondaryHeaderColor)),
                           ],
                         ),
                       ),
                       const SizedBox(height: 5),
-                      Text(
-                          "ananth.",
+                      Text("ananth.",
                           style: TextStyle(
                               fontSize: 80,
                               color: Theme.of(context).secondaryHeaderColor)),
                       const SizedBox(height: 5),
                       const Text(
                           "I have industry experience in building Android and web applications. Specialize in Android & Kotlin",
-                          style: TextStyle(fontSize: 12, color: Colors.white24)),
+                          style:
+                              TextStyle(fontSize: 12, color: Colors.white24)),
                       const SizedBox(height: 30),
-                       Text(
+                      Text(
                         'Let\'s Talk!',
                         style: TextStyle(
                           fontSize: 12,
-                          letterSpacing : 1.2,
-                          color: Theme.of(context).primaryColor ,
+                          letterSpacing: 1.2,
+                          color: Theme.of(context).primaryColor,
                           decoration: TextDecoration.underline,
                           decorationStyle: TextDecorationStyle.wavy,
                         ),
@@ -92,10 +94,13 @@ class _HomeViewState extends State<HomeView>
                   )),
               const SizedBox(width: 10),
               Container(
-                padding: const EdgeInsets.all(16),
-                child: Container(
-                    width: imageSize, child: Lottie.asset('assets/man.json')),
-              ),
+                  padding: const EdgeInsets.all(16),
+                  child: Stack(children: <Widget>[
+                    Orbit(),
+                    SizedBox(
+                        width: imageSize,
+                        child: Lottie.asset('assets/man.json')),
+                  ])),
               const SizedBox(width: 20),
             ],
           ),
