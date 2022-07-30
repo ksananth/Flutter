@@ -1,0 +1,18 @@
+[
+  {
+    "family": "MaterialIcons",
+    "fonts": [
+      {
+        "asset": "fonts/MaterialIcons-Regular.otf"
+      }
+    ]
+  },
+  {
+    "family": "silka",
+    "fonts": [
+      {
+        "asset": "silka-regular-webfont.ttf"
+      }
+    ]
+  }
+]
