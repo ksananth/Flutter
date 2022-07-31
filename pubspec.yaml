@@ -72,6 +72,14 @@ flutter:
     - logo_white.png
     - man.json
     - ic_android.png
+    - ic_kotlin.png
+    - ic_angularjs.png
+    - ic_associate.png
+    - ic_backbonejs.png
+    - ic_flutter.png
+    - ic_html.png
+    - ic_java.png
+    - ic_javascript.png
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware

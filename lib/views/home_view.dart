@@ -25,8 +25,9 @@ class _HomeViewState extends State<HomeView>
   }
 
   Widget desktopView() {
-    double imageSize = screenWidth * 0.4;
+    double imageSize = screenWidth * 0.35;
     double contentSize = screenWidth * 0.2;
+    double imageHeight = screenHeight * 0.9;
     return Container(
         color: Theme.of(context).backgroundColor,
         child: Center(
@@ -97,7 +98,7 @@ class _HomeViewState extends State<HomeView>
               Container(
                   padding: const EdgeInsets.all(32),
                   child: Stack(children: <Widget>[
-                    Orbit(),
+                    Orbit(screenWidth: imageSize, screenHeight: imageHeight),
                     SizedBox(
                         width: imageSize,
                         child: Lottie.asset('assets/man.json')),
