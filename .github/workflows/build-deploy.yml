@@ -28,6 +28,9 @@ jobs:
       #- name: Test project
       #  run: flutter test
 
+      - name: Clean project
+        run: flutter pub get
+
       - name: Build release project
         run: flutter build web --release --base-href "/Flutter/"
 
