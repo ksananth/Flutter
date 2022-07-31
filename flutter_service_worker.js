@@ -7,8 +7,8 @@ const RESOURCES = {
 "canvaskit/profiling/canvaskit.wasm": "95e736ab31147d1b2c7b25f11d4c32cd",
 "canvaskit/canvaskit.js": "c2b4e5f3d7a3d82aed024e7249a78487",
 "canvaskit/canvaskit.wasm": "4b83d89d9fecbea8ca46f2f760c5a9ba",
-"index.html": "9c904a5b15207cde229565bc000f8ef2",
-"/": "9c904a5b15207cde229565bc000f8ef2",
+"index.html": "2432e0551777a243ff3700966d3afc3e",
+"/": "2432e0551777a243ff3700966d3afc3e",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
 "main.dart.js": "f2441c2bb485b0a75ab565b1cf40ac31",
 "manifest.json": "ace26d0c71a6ddf01f5f72671a426a89",
@@ -18,8 +18,8 @@ const RESOURCES = {
 "icons/Icon-512.png": "96e752610906ba2a93c65f8abe1645f1",
 "icons/Icon-maskable-192.png": "c457ef57daa1d16f64b27b786ec2ea3c",
 "icons/Icon-192.png": "ac9a721a12bbc803b44f645561ecb1e1",
-"assets/FontManifest.json": "f982764bcabe4716d30dbf3c0b8da384",
-"assets/NOTICES": "779d2db14405a46f6e85c4f575d3dd2e",
+"assets/FontManifest.json": "c69ba71d1ef17b7689cecf157a57c2cb",
+"assets/NOTICES": "8dec3d93847265365a7ce58998dcf71d",
 "assets/fonts/MaterialIcons-Regular.otf": "95db9098c58fd6db106f1116bae85a0b",
 "assets/fonts/silka-regular-webfont.ttf": "badc42e2be9598cac13af56e3f726d89",
 "assets/fonts/silka-regularitalic-webfont.ttf": "ba7fa7993a7272c4209a2c89c6e306c4",
@@ -30,7 +30,8 @@ const RESOURCES = {
 "assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf": "613e4cc1af0eb5148b8ce409ad35446d",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf": "dd3c4233029270506ecc994d67785a37",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf": "d1722d5cf2c7855862f68edb85e31f88",
-"assets/AssetManifest.json": "08bdd8e03b7ab5f95b8c39d55251631e"
+"assets/packages/material_design_icons_flutter/lib/fonts/materialdesignicons-webfont.ttf": "e9f2f143310604845f8aa26c42ad5f55",
+"assets/AssetManifest.json": "256524fae471fde896edee9819b766a0"
 };
 
 // The application shell files that are downloaded before a service worker can
