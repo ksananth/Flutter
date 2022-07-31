@@ -50,8 +50,9 @@ class _HomeViewState extends State<HomeView>
                         padding: const EdgeInsets.all(5.0),
                         child: const Text("Front-End Developer",
                             style: TextStyle(
+                              fontFamily: 'Silka',
                               fontWeight: FontWeight.bold,
-                              fontSize: 10,
+                              fontSize: 9,
                               color: Colors.black,
                             )),
                       ),
