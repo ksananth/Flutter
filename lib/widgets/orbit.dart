@@ -52,16 +52,33 @@ class _Orbit extends State<Orbit> with SingleTickerProviderStateMixin {
         RotationTransition(
           turns: controller,
           child: Align(
-            alignment: Alignment.topCenter,
+            alignment: Alignment.bottomRight,
             child: Container(
               decoration: BoxDecoration(
                   borderRadius: const BorderRadius.all(Radius.circular(30)),
                   color: HexColor("#25262a")),
-              height: 100.0,
-              width: 100.0,
+              height: 50.0,
+              width: 50.0,
               child: IconButton(
-                  icon: Image.asset('assets/ic_android.png'),
+                  icon: Image.asset('assets/ic_kotlin.png'),
                   iconSize: 20,
+                  onPressed: () {}),
+            ),
+          ),
+        ),
+        RotationTransition(
+          turns: controller,
+          child: Align(
+            alignment: Alignment.bottomRight,
+            child: Container(
+              decoration: BoxDecoration(
+                  borderRadius: const BorderRadius.all(Radius.circular(30)),
+                  color: HexColor("#25262a")),
+              height: 80.0,
+              width: 80.0,
+              child: IconButton(
+                  icon: Image.asset('assets/ic_associate.png'),
+                  iconSize: 50,
                   onPressed: () {}),
             ),
           ),
