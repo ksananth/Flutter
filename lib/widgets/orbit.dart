@@ -14,7 +14,7 @@ class _Orbit extends State<Orbit> with SingleTickerProviderStateMixin {
     super.initState();
     controller = AnimationController(vsync: this);
 
-    controller.repeat(min: 0.0, max: 1.0, period: const Duration(seconds: 30));
+    controller.repeat(min: 0.0, max: 1.0, period: const Duration(seconds: 20));
   }
 
   @override
@@ -27,12 +27,16 @@ class _Orbit extends State<Orbit> with SingleTickerProviderStateMixin {
           child: Align(
             alignment: Alignment.topCenter,
             child: Container(
-              decoration: const BoxDecoration(
-                borderRadius: BorderRadius.all(Radius.circular(30)),
-                color: Colors.green,
+              decoration:  BoxDecoration(
+                borderRadius: const BorderRadius.all(Radius.circular(30)),
+                color: Theme.of(context).primaryColor
               ),
               height: 50.0,
               width: 50.0,
+              child: IconButton(
+                  icon: Image.asset('assets/ic_android.png'),
+                  iconSize: 20,
+                  onPressed: () {}),
             ),
           ),
         ),

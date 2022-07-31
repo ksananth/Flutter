@@ -95,7 +95,7 @@ class _HomeViewState extends State<HomeView>
                   )),
               const SizedBox(width: 10),
               Container(
-                  padding: const EdgeInsets.all(16),
+                  padding: const EdgeInsets.all(32),
                   child: Stack(children: <Widget>[
                     Orbit(),
                     SizedBox(
