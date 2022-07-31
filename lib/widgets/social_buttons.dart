@@ -15,7 +15,7 @@ class SocialButtons extends StatelessWidget{
         const SizedBox(
           height: 30,
           child: IconButton(
-            icon: Icon(FontAwesomeIcons.facebookSquare,color: Colors.blue,),
+            icon: FaIcon(FontAwesomeIcons.facebookSquare,color: Colors.blue,),
             iconSize: 20,
             onPressed: null,
           ),
