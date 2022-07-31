@@ -7,6 +7,7 @@ class Styles {
 
   static ThemeData themeData(bool isDarkTheme, BuildContext context) {
     return ThemeData(
+      fontFamily: 'Silka',
       primarySwatch: Colors.red,
       primaryColor: isDarkTheme ? HexColor('#8df1b3') : Colors.black,
 
