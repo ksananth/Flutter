@@ -7,10 +7,10 @@ const RESOURCES = {
 "canvaskit/profiling/canvaskit.wasm": "95e736ab31147d1b2c7b25f11d4c32cd",
 "canvaskit/canvaskit.js": "c2b4e5f3d7a3d82aed024e7249a78487",
 "canvaskit/canvaskit.wasm": "4b83d89d9fecbea8ca46f2f760c5a9ba",
-"index.html": "2432e0551777a243ff3700966d3afc3e",
-"/": "2432e0551777a243ff3700966d3afc3e",
+"index.html": "a7b8c1e7d907b57a0bfc0124b9e86e3c",
+"/": "a7b8c1e7d907b57a0bfc0124b9e86e3c",
 "favicon.png": "5dcef449791fa27946b3d35ad8803796",
-"main.dart.js": "f2441c2bb485b0a75ab565b1cf40ac31",
+"main.dart.js": "a770ff84f3a6d6cc77c2e794fc09863a",
 "manifest.json": "ace26d0c71a6ddf01f5f72671a426a89",
 "version.json": "53fb59e54fb87bb44dba7c2200e1dead",
 "flutter.js": "eb2682e33f25cd8f1fc59011497c35f8",
@@ -24,14 +24,23 @@ const RESOURCES = {
 "assets/fonts/silka-regular-webfont.ttf": "badc42e2be9598cac13af56e3f726d89",
 "assets/fonts/silka-regularitalic-webfont.ttf": "ba7fa7993a7272c4209a2c89c6e306c4",
 "assets/assets/man.json": "dcdfe7d40db00a7f788f9d952ce73035",
+"assets/assets/ic_backbonejs.png": "8b384515851873a2f40053e893a1a72f",
+"assets/assets/ic_flutter.png": "952789c12bfadd30ce736c9d911fe89b",
+"assets/assets/ic_javascript.png": "c45018285074854bab3714ac034879c1",
 "assets/assets/logo_white.png": "e2d22c8ac9a9b8ff0782febef43278e8",
+"assets/assets/ic_angularjs.png": "400bc231e8de448b255b99739b8ec798",
+"assets/assets/ic_kotlin.png": "bacd53507f71e707715e03270dcc645f",
+"assets/assets/ic_android.png": "b6ff1cba1afce07b699bdc5c2399ce5d",
 "assets/assets/logo.png": "8174badc4f43ddfe50731213b6ea3974",
+"assets/assets/ic_html.png": "be29d04f9634e33cceda58bd834940b6",
+"assets/assets/ic_associate.png": "51811b83c673ba2f4e2c74d6e681ba0d",
+"assets/assets/ic_java.png": "1042742b62a5f98043ef2fcfb754c022",
 "assets/packages/cupertino_icons/assets/CupertinoIcons.ttf": "6d342eb68f170c97609e9da345464e5e",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-regular-400.ttf": "613e4cc1af0eb5148b8ce409ad35446d",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-solid-900.ttf": "dd3c4233029270506ecc994d67785a37",
 "assets/packages/font_awesome_flutter/lib/fonts/fa-brands-400.ttf": "d1722d5cf2c7855862f68edb85e31f88",
 "assets/packages/material_design_icons_flutter/lib/fonts/materialdesignicons-webfont.ttf": "e9f2f143310604845f8aa26c42ad5f55",
-"assets/AssetManifest.json": "256524fae471fde896edee9819b766a0"
+"assets/AssetManifest.json": "777108b8909c64519fca3ade185f8cc8"
 };
 
 // The application shell files that are downloaded before a service worker can
